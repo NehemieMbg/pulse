@@ -1,0 +1,149 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// NextAuth Schema
+
+model Account {
+  id                       String  @id @default(cuid())
+  userId                   String
+  type                     String
+  provider                 String
+  providerAccountId        String
+  refresh_token            String? @db.Text
+  access_token             String? @db.Text
+  expires_at               Int?
+  refresh_token_expires_in Int?
+  token_type               String?
+  scope                    String?
+  id_token                 String? @db.Text
+  session_state            String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model User {
+  id                  String    @id @default(cuid())
+  name                String?
+  bio                 String?   @db.Text
+  age                 Int?
+  username            String?   @unique
+  email               String?   @unique
+  emailVerified       DateTime?
+  hashedPassword      String?
+  dateOfBirth         String?
+  image               String?
+  imageName           String?
+  city                String?
+  link                String?
+  verificationCode    String?
+  resetCode           String?
+  accounts            Account[]
+  sessions            Session[]
+  posts               Post[]
+  Comment             Comment[]
+  Like                Like[]
+  openedNotifications Boolean?  @default(false)
+
+  followedBy   Follow[]       @relation("FollowedBy")
+  following    Follow[]       @relation("Following")
+  Follow       Follow[]
+  Notification Notification[]
+}
+
+model Post {
+  id String @id @default(cuid())
+
+  createdAt DateTime  @default(now())
+  caption   String?
+  imageName String
+  imageUrl  String?
+  items     Item[]
+  likes     Like[]
+  comments  Comment[]
+  author    User      @relation(fields: [authorId], references: [id])
+  authorId  String
+}
+
+model Like {
+  id     String  @id @default(cuid())
+  author User    @relation(fields: [userId], references: [id])
+  Post   Post?   @relation(fields: [postId], references: [id])
+  postId String?
+  userId String
+
+  @@unique([postId, userId])
+}
+
+model Comment {
+  id      String  @id @default(cuid())
+  content String
+  author  User    @relation(fields: [userId], references: [id])
+  Post    Post?   @relation(fields: [postId], references: [id])
+  postId  String?
+  userId  String
+}
+
+model Follow {
+  id String @id @default(cuid())
+
+  following  User @relation("Following", fields: [followingId], references: [id])
+  followedBy User @relation("FollowedBy", fields: [followedById], references: [id])
+
+  followingId  String
+  followedById String
+  User         User?   @relation(fields: [userId], references: [id])
+  userId       String?
+
+  @@unique([followingId, followedById])
+}
+
+model Notification {
+  id         String   @id @default(cuid())
+  message    String
+  senderId   String
+  senderName String
+  timestamp  DateTime @default(now())
+  type       String
+  link       String?
+
+  // Optional: If you want to link the notification to a user
+  user   User?   @relation(fields: [userId], references: [id])
+  userId String?
+
+  @@index([userId]) // Optional: Index to improve query performance
+}
+
+model Item {
+  id       String  @id @default(cuid())
+  itemName String?
+  itemLink String?
+  Post     Post?   @relation(fields: [postId], references: [id])
+  postId   String?
+}
+
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+}

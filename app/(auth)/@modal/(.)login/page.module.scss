@@ -1,0 +1,12 @@
+@import '../../../../sass/main.scss';
+
+.login {
+}
+
+.nav {
+  padding: 1.5rem;
+
+  display: grid;
+  grid-template-columns: 1fr max-content 1fr;
+  align-items: center;
+}

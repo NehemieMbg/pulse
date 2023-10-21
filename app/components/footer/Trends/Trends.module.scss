@@ -1,0 +1,78 @@
+@import '../../../../sass/main.scss';
+
+.list {
+  list-style: none;
+}
+
+.suggestion {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.2s;
+
+  padding: 1.5rem;
+
+  &:hover {
+    background-color: $bg-4;
+  }
+
+  &-text {
+    .name {
+      font-size: 1.4rem;
+      font-weight: 400;
+    }
+
+    .user:link,
+    .user:visited {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+
+      .image {
+        width: 4rem;
+        height: 4rem;
+        border-radius: 100%;
+        object-fit: cover;
+      }
+
+      .no-image {
+        content: '';
+        aspect-ratio: 1/1;
+        width: 4rem;
+        height: 4rem;
+        border-radius: 100%;
+        background-color: $bg-4;
+      }
+    }
+
+    .username {
+      font-size: 1.4rem;
+      color: $font-color-2;
+    }
+  }
+
+  .btn {
+    border-radius: 1.5rem;
+    border: none;
+    background-color: rgba($action-color-1, 0.8);
+    font-family: inherit;
+    font-size: 1.4rem;
+    padding: 0.5rem 1.5rem;
+    color: $bg-1;
+    transition: background-color 0.2s;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $action-color-1;
+    }
+  }
+}
+
+.nosuggestion {
+  padding: 1.5rem;
+  .no-suggestion-title {
+    font-size: 1.6rem;
+    color: $font-color-2;
+    font-weight: 500;
+  }
+}

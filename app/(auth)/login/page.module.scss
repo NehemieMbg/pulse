@@ -1,0 +1,16 @@
+@import '../../../sass/main.scss';
+
+.login {
+  font-family: 'Roboto', sans-serif;
+  background-color: $bg-1;
+  position: absolute;
+  color: $font-color-1;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

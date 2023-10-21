@@ -1,0 +1,77 @@
+@import '../../../../sass/main.scss';
+
+.list {
+  list-style: none;
+}
+
+.suggestion {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.2s;
+
+  padding: 1.5rem;
+
+  &:hover {
+    background-color: $bg-4;
+  }
+
+  &-text {
+    .name {
+      @include skeleton;
+      width: 10rem;
+      border-radius: 0.5rem;
+      height: 1.4rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .user {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+
+      .image {
+        width: 4rem;
+        height: 4rem;
+        border-radius: 100%;
+        object-fit: cover;
+      }
+
+      .no-image {
+        content: '';
+        aspect-ratio: 1/1;
+        width: 4rem;
+        height: 4rem;
+        border-radius: 100%;
+        @include skeleton;
+      }
+    }
+
+    .username {
+      @include skeleton;
+      width: 8rem;
+      border-radius: 0.5rem;
+      height: 1.4rem;
+    }
+  }
+
+  .btn {
+    border-radius: 1.5rem;
+    border: none;
+    height: 2.8rem;
+    width: 7rem;
+    padding: 0.5rem 1.5rem;
+    transition: background-color 0.2s;
+
+    @include skeleton;
+  }
+}
+
+.nosuggestion {
+  padding: 1.5rem;
+  .no-suggestion-title {
+    font-size: 1.6rem;
+    color: $font-color-2;
+    font-weight: 500;
+  }
+}

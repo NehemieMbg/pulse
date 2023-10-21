@@ -1,0 +1,111 @@
+@import '../../../../sass/main.scss';
+
+.navigation {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  gap: 1rem;
+  font-size: 1.8rem;
+  font-weight: 300;
+
+  @media only screen and (max-width: 896px) {
+    width: max-content;
+  }
+
+  @media only screen and (max-width: 538px) {
+    width: 100%;
+  }
+
+  li {
+    width: 100%;
+    position: relative;
+
+    @include navigation-btn;
+
+    @media only screen and (max-width: 896px) {
+      width: max-content;
+    }
+
+    @media only screen and (max-width: 538px) {
+      width: 100%;
+    }
+    .create-text {
+      @media only screen and (max-width: 896px) {
+        display: none;
+        visibility: hidden;
+      }
+      @media only screen and (max-width: 538px) {
+        display: block;
+        visibility: visible;
+      }
+    }
+
+    a {
+      @media only screen and (max-width: 896px) {
+        p {
+          display: none;
+          visibility: hidden;
+        }
+
+        .icon {
+          width: 2.5rem !important;
+          height: 2.5rem !important;
+        }
+      }
+
+      @media only screen and (max-width: 538px) {
+        p {
+          display: block;
+          visibility: visible;
+        }
+      }
+    }
+  }
+
+  .active {
+    font-weight: 400;
+  }
+
+  @media only screen and (max-width: 538px) {
+    .home,
+    .search,
+    .notification,
+    .message {
+      display: none;
+      visibility: hidden;
+    }
+  }
+}
+
+.notif-container {
+  height: max-content;
+  width: max-content !important;
+  padding: 0 !important;
+  position: relative;
+}
+
+.notif {
+  display: none;
+  visibility: hidden;
+  top: 0;
+  right: 0.01rem;
+  position: absolute;
+  width: 0.8rem !important;
+  height: 0.8rem;
+  background-color: $action-color-1;
+
+  padding: 0 !important;
+}
+
+.notif-active {
+  display: block;
+  visibility: visible;
+  top: 0;
+  right: 0.01rem;
+  position: absolute;
+  width: 0.8rem !important;
+  height: 0.8rem;
+  background-color: $action-color-1;
+
+  padding: 0 !important;
+}

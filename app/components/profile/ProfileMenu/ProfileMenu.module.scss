@@ -1,0 +1,84 @@
+@import '../../../../sass/main.scss';
+
+.profile {
+  position: relative;
+}
+
+.icon-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100%;
+  padding: 0.25rem;
+  transition: background-color 0.2s;
+
+  &:hover {
+    background-color: $bg-3;
+  }
+
+  @media only screen and (max-width: 502px) {
+    margin-left: auto;
+  }
+}
+
+.menu-hidden {
+  display: none;
+  position: absolute;
+  padding: 1.5rem;
+  z-index: 200;
+  width: 25rem;
+  border-radius: 1rem;
+  top: 0;
+  right: 0;
+}
+
+.menu-container {
+  padding: 1.5rem;
+  z-index: 200;
+  width: 25rem;
+  border-radius: 1rem;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: $bg-1;
+  @include border-highlight-1;
+
+  .list {
+    display: block;
+    font-size: 1.5rem;
+
+    li {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+
+      border-radius: 0.5rem;
+      padding: 1rem 1.5rem;
+      cursor: pointer;
+      transition: background-color 0.2s;
+
+      .icon {
+        height: 2rem;
+        width: 2rem;
+      }
+
+      a:link,
+      :visited {
+        width: 100%;
+      }
+
+      p {
+        color: $font-color-1;
+        span {
+          @include ut-1;
+          font-size: 1.5rem;
+          font-weight: 400;
+        }
+      }
+
+      &:hover {
+        background-color: $bg-3;
+      }
+    }
+  }
+}

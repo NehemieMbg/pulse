@@ -1,0 +1,63 @@
+@import '../../../../sass/main.scss';
+
+.icon-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  transition: background-color 0.2s;
+
+  &:hover {
+    background-color: $bg-2;
+  }
+}
+
+.trend-menu {
+  position: relative;
+
+  .menu-hidden {
+    display: none;
+    position: absolute;
+    padding: 1.5rem;
+    z-index: 100;
+    width: 25rem;
+    border-radius: 1rem;
+    top: 0;
+    right: 0;
+  }
+
+  .menu-container {
+    padding: 1.5rem;
+    z-index: 100;
+    width: 25rem;
+    border-radius: 1rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: $bg-1;
+    @include border-highlight-1;
+
+    .list {
+      list-style: none;
+
+      li {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+
+        border-radius: 0.5rem;
+        padding: 1rem 1.5rem;
+        transition: background-color 0.2s;
+
+        &:hover {
+          background-color: $bg-3;
+        }
+
+        .icon {
+          width: 2rem;
+          height: 2rem;
+        }
+      }
+    }
+  }
+}

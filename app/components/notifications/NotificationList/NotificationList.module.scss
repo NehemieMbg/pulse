@@ -1,0 +1,53 @@
+@import '../../../../sass/main.scss';
+
+.notifications-list {
+  font-size: 1.5rem;
+  list-style: none;
+  width: 100%;
+}
+
+.notification {
+  a:link,
+  a:visited {
+    width: 100%;
+    padding: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 1.5rem;
+    transition: background-color 0.2s;
+
+    .container {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    &:hover {
+      background-color: $bg-3;
+    }
+  }
+
+  .image {
+    width: 4rem;
+    height: 4rem;
+    object-fit: cover;
+    border-radius: 100%;
+  }
+
+  p {
+    span {
+      @include ut-1;
+      font-size: 1.5rem;
+      font-weight: 400;
+    }
+  }
+
+  .time {
+    @include ut-1;
+    font-size: 1.5rem;
+    font-weight: 400;
+  }
+}

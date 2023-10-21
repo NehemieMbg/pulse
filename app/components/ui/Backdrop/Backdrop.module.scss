@@ -1,0 +1,20 @@
+@import '../../../../sass/main.scss';
+
+.backdrop {
+  position: fixed;
+  visibility: visible;
+  z-index: 390;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  content: '';
+  background-color: $backdrop-bg-1;
+  // backdrop-filter: blur(10rem);
+}
+
+.hidden {
+  opacity: 0;
+  display: none;
+  visibility: hidden;
+}

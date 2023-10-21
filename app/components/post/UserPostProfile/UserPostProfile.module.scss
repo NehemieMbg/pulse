@@ -1,0 +1,66 @@
+@import '../../../../sass/main.scss';
+
+.user-profile {
+  background-color: rgb(34, 34, 34);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 0.1rem solid $bg-3;
+
+  @media only screen and (max-width: 975px) {
+    display: none;
+    visibility: hidden;
+  }
+
+  .profile-picture {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    padding: 1.5rem;
+
+    .profile-image {
+      margin-right: 1.5rem;
+      height: 3.2rem;
+      width: 3.2rem;
+      object-fit: cover;
+      border-radius: 100%;
+    }
+
+    .no-image {
+      content: '';
+      margin-right: 1.5rem;
+      height: 3.2rem;
+      height: 3.2rem;
+      aspect-ratio: 1/1;
+      border-radius: 100%;
+      background-color: $bg-4;
+    }
+
+    .verified {
+      margin-left: 0.5rem;
+      height: 1.3rem;
+      width: 1.3rem;
+      color: rgb(29, 155, 240);
+      color: #00b7b7;
+    }
+  }
+
+  .menu {
+    padding: 1rem;
+
+    .btn {
+      padding: 0.5rem;
+      border-radius: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background-color 0.2s;
+
+      &:hover {
+        background-color: $bg-3;
+      }
+    }
+  }
+}

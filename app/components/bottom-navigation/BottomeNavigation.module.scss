@@ -1,0 +1,43 @@
+@import '../../../sass/main.scss';
+
+.navigation {
+  display: none;
+  visibility: hidden;
+
+  @media only screen and (max-width: 538px) {
+    display: block;
+    visibility: visible;
+    background-color: $bg-1;
+    font-size: 1.5rem;
+    padding: 1rem 2.5rem;
+    position: fixed;
+    z-index: 300;
+    bottom: 0;
+    width: 100%;
+  }
+
+  .list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+
+    li {
+      cursor: pointer;
+
+      .icon {
+        cursor: pointer;
+        stroke: $font-color-1;
+        height: 2.5rem;
+        width: 2.5rem;
+      }
+
+      .user-profile-picture {
+        border-radius: 100%;
+        object-fit: cover;
+        height: 3rem;
+        width: 3rem;
+      }
+    }
+  }
+}

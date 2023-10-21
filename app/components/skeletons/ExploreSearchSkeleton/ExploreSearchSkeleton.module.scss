@@ -1,0 +1,26 @@
+@import '../../../../sass/main.scss';
+
+.search {
+  position: sticky;
+  background-color: rgba($bg-1, 0.9);
+  backdrop-filter: blur(1rem);
+  top: 0;
+  z-index: 200;
+}
+
+.search-container {
+  position: sticky;
+  top: 0;
+  border-bottom: 0.1rem solid $bg-3;
+  padding: 1.5rem 2.5rem;
+
+  .input {
+    border-radius: 2.5rem;
+    height: 4.2rem;
+    @include skeleton;
+  }
+}
+
+.container {
+  position: relative;
+}

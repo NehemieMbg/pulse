@@ -1,0 +1,116 @@
+@import '../../../../../sass/main.scss';
+
+.hidden {
+  display: none;
+  visibility: hidden;
+  position: absolute;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.comments-container {
+  position: absolute;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+}
+
+.comments-section__container {
+  display: block !important;
+  padding: 1.5rem;
+  background-color: $bg-1;
+  height: max-content;
+  width: 60rem;
+  margin-top: 6rem;
+  border-radius: 1.5rem;
+
+  @include border-highlight-1;
+}
+
+.icon-container {
+  padding: 0.5rem;
+  width: max-content;
+  border-radius: 100%;
+  transition: background-color 0.2s;
+
+  &:hover {
+    background-color: $bg-2;
+  }
+
+  .icon {
+    height: 2rem;
+    width: 2rem;
+  }
+}
+
+.comment-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start !important;
+
+  padding: 1.5rem;
+  cursor: auto !important;
+
+  .user-description {
+    color: $font-color-1;
+    width: 100%;
+    padding-bottom: 3.5rem;
+    margin-bottom: 2.5rem;
+    border-bottom: 0.1rem solid $bg-2;
+  }
+}
+
+.form {
+  display: block !important;
+  width: 100%;
+  .user-new-comment {
+    display: flex;
+    align-items: flex-start !important;
+    gap: 1rem !important;
+    width: 100% !important;
+    margin-bottom: 2rem;
+
+    .profile-picture {
+      width: 4rem;
+      height: 4rem;
+      border-radius: 100%;
+      object-fit: cover;
+    }
+
+    textarea {
+      font-family: inherit;
+      color: $font-color-1;
+      font-weight: 300;
+      font-size: 1.6rem;
+      width: calc(100% - 6rem) !important;
+
+      resize: none;
+      padding: 0.5rem;
+      border: none;
+      background-color: transparent;
+      outline: none;
+    }
+  }
+  .btn-container {
+    cursor: auto !important;
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+
+    button {
+      cursor: pointer;
+      font-family: inherit;
+      font-size: 1.5rem;
+      border: none;
+      border-radius: 10rem;
+      padding: 1rem 2.5rem;
+      background-color: $font-color-1;
+    }
+  }
+}

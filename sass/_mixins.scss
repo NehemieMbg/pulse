@@ -1,0 +1,80 @@
+// Titles Fonts
+@mixin t-1 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 3.1rem;
+}
+
+@mixin t-2 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 2rem;
+}
+
+@mixin t-3 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+// Under Title Fonts (really small titles)
+@mixin ut-1 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 300;
+  color: $font-color-2;
+}
+
+// Normal font for p tags
+@mixin text-1 {
+  font-size: 1.5rem;
+}
+
+@mixin navigation-btn {
+  a,
+  a:link,
+  a:visited,
+  div,
+  button {
+    font-size: 1.6rem;
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    align-items: center;
+    gap: 1.6rem;
+    color: inherit;
+    font-family: inherit;
+
+    width: 100%;
+    padding: 1rem 1.5rem;
+    border-radius: 0.5rem;
+    transition: all 0.2s;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $bg-3;
+    }
+
+    .icon {
+      stroke: white;
+      height: 2.2rem;
+      width: 2.2rem;
+    }
+  }
+}
+
+@mixin border-highlight-1 {
+  box-shadow: 0 0 0.5rem 0.1rem $bg-3;
+}
+
+@mixin skeleton {
+  opacity: 0.7;
+  animation: skeleton-loading 1s linear infinite alternate;
+}
+
+@keyframes skeleton-loading {
+  0% {
+    background-color: rgba($bg-3, 0.04);
+  }
+
+  100% {
+    background-color: rgba($bg-3, 0.13);
+  }
+}

@@ -1,0 +1,24 @@
+@import '../../../../sass/main.scss';
+
+.navigation {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  font-size: 1.4rem;
+  cursor: pointer;
+  width: max-content;
+  padding: 0.8rem 1.5rem;
+  border-radius: 1rem;
+  font-weight: 400;
+  transition: background-color 0.2s;
+  // margin: 2.5rem 1.5rem;
+  margin-bottom: 1.5rem;
+
+  .icon-navigation {
+    width: 2rem;
+  }
+
+  &:hover {
+    background-color: $bg-3;
+  }
+}

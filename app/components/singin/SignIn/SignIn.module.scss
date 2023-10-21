@@ -1,0 +1,99 @@
+@import '../../../../sass/main.scss';
+
+.signin-container {
+  height: 100%;
+  display: flex;
+  flex-direction: columns;
+
+  justify-content: center;
+}
+
+.signin {
+  font-size: 1.6rem;
+  width: 100%;
+  max-width: 29.8rem;
+  margin: 0 auto;
+
+  .heading {
+    font-size: 3.1rem;
+    margin: 2rem 0;
+    font-weight: 500;
+  }
+}
+
+.connect {
+  width: 100%;
+
+  .btn {
+    width: 100%;
+    padding: 1rem 2.5rem;
+    border: none;
+    border-radius: 2.5rem;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    font-family: inherit;
+    font-weight: 500;
+    font-size: 1.6rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+
+    .icon {
+      width: 2.4rem;
+      height: 2.4rem;
+    }
+
+    &:hover {
+      background-color: rgb(217, 217, 217);
+    }
+  }
+
+  .or {
+    margin: 1.5rem 0;
+    font-size: 1.6rem;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    width: 100%;
+
+    div {
+      content: '';
+      border-bottom: solid 0.1rem rgb(98, 98, 98);
+      width: 100%;
+    }
+  }
+
+  .forgot {
+    background-color: inherit;
+    color: $font-color-1;
+    border: solid 0.1rem $bg-3;
+    margin-top: 2.5rem;
+    margin-bottom: 6rem;
+    transition: background-color 0.2s;
+
+    &:hover {
+      background-color: rgba($action-color-1, 0.1);
+    }
+  }
+
+  .to-sign-up {
+    @include ut-1;
+    font-size: 1.6rem;
+    font-weight: 300;
+
+    a:link,
+    a:visited {
+      cursor: pointer;
+      color: $action-color-1;
+      transition: text-decoration 0.2s;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}

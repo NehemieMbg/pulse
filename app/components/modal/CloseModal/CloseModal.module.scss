@@ -1,0 +1,19 @@
+@import '../../../../sass/main.scss';
+
+.icon-container {
+  width: max-content;
+  height: max-content;
+  cursor: pointer;
+
+  .icon {
+    padding: 0.5rem;
+    height: 3.2rem;
+    width: 3.2rem;
+    border-radius: 100%;
+    transition: background-color 0.2s;
+  }
+
+  &:hover .icon {
+    background-color: $bg-3;
+  }
+}

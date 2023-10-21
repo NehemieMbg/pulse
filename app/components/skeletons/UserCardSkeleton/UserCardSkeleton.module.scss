@@ -1,0 +1,59 @@
+@import '../../../../sass/main.scss';
+
+.user-profile {
+  margin-bottom: 2.5rem;
+
+  .container {
+    padding: 0.5rem;
+    border-radius: 0.8rem;
+    margin-bottom: 2rem;
+  }
+}
+
+.user-profile-text {
+  @media only screen and (max-width: 896px) {
+    display: none;
+    visibility: hidden;
+  }
+
+  @media only screen and (max-width: 538px) {
+    display: block;
+    visibility: visible;
+  }
+}
+
+.my-profile-container {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+
+  .name {
+    height: 1.6rem;
+    width: 15rem;
+    border-radius: 0.5rem;
+    @include skeleton;
+    margin-bottom: 0.5rem;
+  }
+
+  .username {
+    height: 1.4rem;
+    width: 12rem;
+    border-radius: 0.5rem;
+    @include skeleton;
+  }
+}
+
+.no-image {
+  content: '';
+  aspect-ratio: 1 / 1;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 100%;
+
+  @include skeleton;
+
+  @media only screen and (max-width: 1241px) {
+    width: 4rem;
+    height: 4rem;
+  }
+}

@@ -1,0 +1,17 @@
+@import '../../../../sass/main.scss';
+
+.terms {
+  .terms-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    line-height: 1;
+    @include ut-1;
+    font-size: 1.4rem;
+  }
+
+  li {
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,52 @@
+@import '../../../../sass/main.scss';
+
+.feed {
+  width: 100%;
+  padding: 2.5rem 1.5rem;
+  margin: 0 auto;
+
+  .feed-container {
+    max-width: 97.5rem;
+
+    margin: 0 auto;
+  }
+
+  .heading {
+    font-size: 2rem;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+
+    @media only screen and (max-width: 896px) {
+      padding: 0 2.5rem;
+    }
+  }
+
+  .photo-feed {
+    margin: 0 auto;
+    list-style: none;
+    max-width: 97.5rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.6rem;
+
+    .image-container {
+      position: relative;
+      aspect-ratio: 1 / 1;
+      overflow: hidden;
+      border-radius: 1.5rem;
+
+      max-width: 100%;
+      transition: filter 0.2s;
+
+      &:hover {
+        filter: brightness(0.5);
+      }
+
+      .image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+}

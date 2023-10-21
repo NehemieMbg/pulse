@@ -1,0 +1,30 @@
+@import '../../../../sass/main.scss';
+
+.comment-icon:hover {
+  .icon,
+  p {
+    transition: all 0.2s;
+    color: $action-color-1;
+    stroke: $action-color-1;
+  }
+}
+
+.comment-icon {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+
+  p {
+    cursor: pointer;
+    color: $font-color-2;
+    font-size: 1.4rem;
+  }
+
+  .icon,
+  .icon-full {
+    stroke: $font-color-2;
+    height: 2.2rem;
+    width: 2.2rem;
+  }
+}

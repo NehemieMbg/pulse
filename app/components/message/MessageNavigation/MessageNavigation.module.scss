@@ -1,0 +1,32 @@
+@import '../../../../sass/main.scss';
+
+.nav {
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 0.1rem solid $bg-3;
+
+  .heading {
+    font-weight: 500;
+    font-size: 2rem;
+  }
+
+  .icon-container {
+    cursor: pointer;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0.6rem;
+    transition: background-color 0.2s;
+
+    &:hover {
+      background-color: $bg-3;
+    }
+
+    .icon {
+      height: 2.4rem;
+      width: 2.4rem;
+    }
+  }
+}

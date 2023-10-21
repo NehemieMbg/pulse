@@ -1,0 +1,36 @@
+@import '../../../../sass/main.scss';
+
+.like:hover,
+.liked:hover {
+  .icon,
+  p {
+    transition: all 0.2s;
+    color: rgb(249, 24, 128);
+    stroke: rgb(249, 24, 128);
+    //   fill: rgb(255, 0, 93);
+  }
+}
+
+.like {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+
+  p {
+    font-size: 1.4rem;
+    cursor: pointer;
+    color: $font-color-2;
+  }
+
+  .icon {
+    stroke: $font-color-2;
+    height: 2.2rem;
+    width: 2.2rem;
+  }
+}
+
+.liked {
+  fill: rgb(255, 0, 93);
+  stroke: rgb(249, 24, 128) !important;
+}

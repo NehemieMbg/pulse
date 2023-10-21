@@ -1,0 +1,73 @@
+@import '../../../../sass/main.scss';
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  .email-input,
+  .password-input {
+    font-family: inherit;
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: $font-color-1;
+    width: 100%;
+    padding: 1.5rem 2.5rem;
+    // margin-bottom: 2.5rem;
+    background-color: inherit;
+    outline: none;
+    border: 0.1rem solid $bg-3;
+    border-radius: 0.5rem;
+  }
+
+  .input-error {
+    border: 0.1rem solid $error-color-1;
+  }
+
+  .btn {
+    width: 100%;
+    padding: 1rem 2.5rem;
+    border: none;
+    border-radius: 2.5rem;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    font-family: inherit;
+    font-weight: 500;
+    font-size: 1.6rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+
+    .icon {
+      width: 2.4rem;
+      height: 2.4rem;
+    }
+
+    &:hover {
+      background-color: rgb(217, 217, 217);
+    }
+  }
+}
+
+.error {
+  color: $error-color-1;
+  font-size: 1.5rem;
+  margin-top: 1rem;
+}
+
+.loading {
+  scale: 0.5;
+  position: absolute;
+  z-index: 1;
+  transform: translate(-100%, -50%);
+  color: $font-color-1;
+  margin-top: 2.5rem;
+  left: 50%;
+}
+
+.loading-container {
+  background-color: $bg-3 !important;
+  cursor: not-allowed;
+}

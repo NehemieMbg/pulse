@@ -1,0 +1,167 @@
+@import '../../../../sass/main.scss';
+
+.post {
+  width: 100%;
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  gap: 2rem;
+}
+
+.post-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  margin-bottom: 6rem;
+}
+
+.post-card {
+  display: grid;
+  width: 100%;
+
+  overflow: hidden;
+  background-color: $bg-1;
+  border: solid 0.15rem $bg-3;
+  grid-template-rows: 7.5rem max-content max-content;
+
+  @media only screen and (max-width: 538px) {
+    border: none;
+  }
+
+  .top-card-container {
+    position: relative;
+    max-height: 100%;
+
+    grid-row: 1 / 2;
+    grid-column: 1 / 2;
+    align-self: flex-start;
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5rem;
+
+    .top-card:link,
+    .top-card:visited {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+
+      .profile-picture {
+        z-index: 5;
+        height: 4.5rem;
+        width: 4.5rem;
+        border-radius: 100%;
+      }
+
+      .no-image {
+        content: '';
+        aspect-ratio: 1/1;
+        height: 4.5rem;
+        width: 4.5rem;
+        background-color: $bg-4;
+        border-radius: 100%;
+      }
+
+      .profile-info-container {
+        height: 100%;
+      }
+
+      .profile-info {
+        display: inline-block;
+      }
+
+      .name {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+
+        .fullname {
+          @include t-3;
+        }
+
+        .username {
+          @include ut-1;
+          font-size: 1.5rem;
+        }
+      }
+      .posted-time {
+        @include ut-1;
+      }
+
+      .fullname,
+      .username,
+      .posted-time {
+        text-shadow: 1rem 0 0 1rem white;
+      }
+    }
+  }
+
+  .main-picture {
+    grid-row: 2 / 3;
+    grid-column: 1 / 2;
+    width: 100%;
+    height: auto;
+  }
+
+  .bottom-card {
+    padding: 1.5rem;
+    grid-row: 3 / 4;
+    grid-column: 1 / 2;
+
+    .user-bio {
+      font-size: 1.5rem;
+      margin-bottom: 2.5rem;
+
+      &-text {
+        margin-bottom: 0.5rem;
+      }
+
+      &-username {
+        @include t-3;
+      }
+
+      .hashtag-list {
+        margin-bottom: 1rem;
+        list-style: none;
+        display: flex;
+        gap: 0.5rem;
+        @include ut-1;
+        cursor: pointer;
+        font-size: 1.4rem;
+        font-weight: 400;
+      }
+    }
+
+    .reactions {
+      display: grid;
+      grid-template-columns: 1fr max-content 1fr;
+
+      @include ut-1;
+
+      .likes {
+        justify-self: flex-start;
+      }
+
+      .views {
+        justify-self: flex-end;
+      }
+
+      div {
+        justify-self: center;
+        display: flex;
+        gap: 0.5rem;
+        align-items: center;
+        cursor: pointer;
+
+        .icon {
+          width: 1.8rem;
+          height: 1.8rem;
+          stroke: $font-color-2;
+        }
+      }
+    }
+  }
+}
